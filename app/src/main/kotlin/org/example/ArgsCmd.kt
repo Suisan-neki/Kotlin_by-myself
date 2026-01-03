@@ -6,7 +6,7 @@ package org.example
 
 //プログラムの入り口、エントリポイント
 //mainのカッコ内はコマンドライン引数の配列
-fun main(args: Array<String>) {
+fun runArgs(args: Array<String>) {
     println("args.size = ${args.size}")
     println("args = ${args.joinToString()}")
 }
