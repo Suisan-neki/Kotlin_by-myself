@@ -11,8 +11,10 @@ fun main(args: Array<String>) {
 
     when (cmd) {
         "args" -> runArgs(rest)
-        "greet" -> runGreet()
-        "calc" -> runCalc()
+        //"greet" -> runGreet()
+        //"calc" -> runCalc()
+        "ds" -> runDataStructures(rest)
+
         else -> println("Unknown command: $cmd (args/greet/calc)")
     }
 }
