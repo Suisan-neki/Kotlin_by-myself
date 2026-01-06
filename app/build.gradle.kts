@@ -5,6 +5,9 @@
  * For more details on building Java & JVM projects, please refer to https://docs.gradle.org/9.2.1/userguide/building_java_projects.html in the Gradle documentation.
  */
 
+//Gradleは「Java/Kotlin」プロジェクトの段取り係
+//コンパイル・実行・テスト・依存関係管理を人の代わりにやってくれる自動化ツール
+
 plugins {
     // Apply the org.jetbrains.kotlin.jvm Plugin to add support for Kotlin.
     alias(libs.plugins.kotlin.jvm)
@@ -46,4 +49,9 @@ application {
 tasks.named<Test>("test") {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
+}
+
+//Gradle 経由で起動してもKotlinアプリが readLine() でキーボード入力を受け取れるようになった
+tasks.named<JavaExec>("run") {
+    standardInput = System.`in`
 }

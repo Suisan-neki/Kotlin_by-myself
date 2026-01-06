@@ -28,5 +28,23 @@ fun runDataStructures(args: Array<String>) {
     //false が出た = 探索が正しく完了した
 
     println("見つかった？ $found")
+
+    //Listで探索、Mapで直接取得
+    //Mapの作成
+    val priceMap = mapOf(
+        "apple" to 100,
+        "banana" to 80,
+        "orange" to 120,
+        "grape" to 90,
+        "melon" to 150
+    )
+
+    println("Map keys = ${priceMap.keys}")
+
+    print("Mapで値段を知りたい果物を入力: ")
+    val key = readLine()?.trim().orEmpty()
+
+    val price = priceMap[key]
+    println("Mapで取得した値段 = $price")
 }
 
