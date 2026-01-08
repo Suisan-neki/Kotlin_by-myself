@@ -46,5 +46,23 @@ fun runDataStructures(args: Array<String>) {
 
     val price = priceMap[key]
     println("Mapで取得した値段 = $price")
+
+    // --- Set ---
+    //重複を許さない集合を作る
+    val seen = mutableSetOf<String>()
+
+    println("Set（重複なし）に値を追加してみる")
+    while (true) {
+        print("追加する果物（空で終了）: ")
+        val input = readLine()?.trim().orEmpty()
+        if (input.isBlank()) break
+
+        //追加できたらtrue,すでにあったらfaise
+        val added = seen.add(input)
+        println(if (added) "追加された" else "すでに存在")
+    }
+
+    println("最終的なSet = $seen")
+
 }
 
