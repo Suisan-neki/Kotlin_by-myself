@@ -12,12 +12,12 @@ fun runDataStructures(args: Array<String>) {
     //標準入力を受け取る
     print("探したい要素を入力: ")
     //ここは安全装置
-    val target = readLine()?.trim().orEmpty()
+    val targetFruit = readLine()?.trim().orEmpty()
 
     //containsが核心
     //target == "peach"だとする
     //要素数に比例して処理が増える、これが O(n)
-    val found = list.contains(target)
+    val found = list.contains(targetFruit)
 
     //list[0] == target ?  → 違う
     //list[1] == target ?  → 違う
@@ -63,6 +63,28 @@ fun runDataStructures(args: Array<String>) {
     }
 
     println("最終的なSet = $seen")
+
+    // --- Sort & Binary Search ---
+    val numbers = listOf(5, 3, 9, 1, 7, 2, 8, 4, 6)
+
+    println("before sort = $numbers")
+
+    val sorted = numbers.sorted()
+    println("after sort  = $sorted")
+
+    print("探す数値を入力: ")
+    val targetNumber = readLine()?.toIntOrNull()
+
+    if (targetNumber == null) {
+        println("数値を入力してください")
+        return
+    }
+
+    val index = sorted.binarySearch(targetNumber)
+    println(
+        if (index >= 0) "見つかった（index=$index）"
+        else "見つからなかった"
+    )
 
 }
 
